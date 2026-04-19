@@ -76,28 +76,28 @@
         "focus": "Back strength + bicep hypertrophy",
         "exercises": [
           {
-            "name": "Deadlifts",
-            "sets": 3,
-            "reps": "5-6",
-            "weight_kg": 200,
-            "rest_seconds": 120,
-            "notes": "Max strength compound"
-          },
-          {
             "name": "Barbell Rows",
             "sets": 4,
-            "reps": "6-8",
+            "reps": "5-6",
             "weight_kg": 140,
             "rest_seconds": 90,
-            "notes": "Primary back builder"
+            "notes": "Primary back strength"
           },
           {
             "name": "Lat Pulldowns",
             "sets": 3,
-            "reps": "10-12",
+            "reps": "8-10",
             "weight_kg": 90,
             "rest_seconds": 60,
             "notes": "Back width"
+          },
+          {
+            "name": "T-Bar Rows",
+            "sets": 3,
+            "reps": "8-10",
+            "weight_kg": 150,
+            "rest_seconds": 60,
+            "notes": "Back thickness"
           },
           {
             "name": "Barbell Curls",

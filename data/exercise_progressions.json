@@ -70,41 +70,6 @@
         "weekly_target_increase_kg": 5
       }
     },
-    "deadlift": {
-      "display_name": "Deadlift",
-      "category": "lower_body",
-      "current_max": {
-        "weight_kg": 200,
-        "reps": 5,
-        "date": "2026-04-19"
-      },
-      "all_time_pr": {
-        "weight_kg": 200,
-        "reps": 5,
-        "date": "2026-04-19"
-      },
-      "history": [
-        {
-          "date": "2026-04-19",
-          "weight_kg": 200,
-          "reps": 5,
-          "session_name": "Tuesday Pull A"
-        },
-        {
-          "date": "2026-04-12",
-          "weight_kg": 195,
-          "reps": 5,
-          "session_name": "Tuesday Pull A"
-        }
-      ],
-      "progression_tracking": {
-        "last_increase_date": "2026-04-12",
-        "weeks_since_increase": 1,
-        "next_suggested_weight_kg": 205,
-        "increase_increment_kg": 5,
-        "weekly_target_increase_kg": 5
-      }
-    },
     "overhead_press": {
       "display_name": "Overhead Press",
       "category": "upper_body",
