@@ -1,9 +1,9 @@
 {
   "user": {
-    "name": "Your Name",
+    "name": "Rugby Player #12",
     "age": null,
-    "height_cm": null,
-    "goal": "fitness_improvement"
+    "height_cm": 177,
+    "goal": "fat_loss_strength_rugby_comeback"
   },
   "tracking": {
     "enable_weight": true,

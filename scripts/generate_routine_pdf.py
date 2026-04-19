@@ -368,6 +368,105 @@ def create_measurements_section(measurements, styles):
     return content
 
 
+def create_analytics_section(styles):
+    """Create analytics: body composition, fat loss timeline, weekly projections"""
+    content = []
+
+    content.append(Paragraph("📊 Analytics & Progress Tracking", styles['title']))
+    content.append(Spacer(1, 0.2*inch))
+
+    # Body Composition Stats
+    content.append(Paragraph("Your Current Body Composition (177cm height)", styles['section']))
+    content.append(Spacer(1, 0.1*inch))
+
+    comp_data = [
+        ['Metric', 'Value', 'Status'],
+        ['Weight', '95.0 kg', 'Starting point'],
+        ['BMI', '30.3', 'Obese (goal: <25)'],
+        ['Body Fat %', '30%', '28.5 kg fat mass'],
+        ['Lean Mass', '66.5 kg', 'Target: preserve'],
+        ['Daily Deficit', '500 cal', '~0.5kg/week fat loss']
+    ]
+
+    comp_table = Table(comp_data, colWidths=[1.8*inch, 1.2*inch, 2.2*inch])
+    comp_table.setStyle(TableStyle([
+        ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#1f77b4')),
+        ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+        ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+        ('FONTSIZE', (0, 0), (-1, 0), 10),
+        ('BACKGROUND', (0, 1), (-1, -1), colors.HexColor('#e6f2ff')),
+        ('GRID', (0, 0), (-1, -1), 1, colors.grey),
+        ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, colors.HexColor('#f5f9ff')]),
+        ('FONTSIZE', (0, 1), (-1, -1), 9),
+    ]))
+
+    content.append(comp_table)
+    content.append(Spacer(1, 0.2*inch))
+
+    # Fat Loss Timeline
+    content.append(Paragraph("Fat Loss Timeline to Goals", styles['section']))
+    content.append(Spacer(1, 0.1*inch))
+
+    timeline_data = [
+        ['Target', 'Body Fat %', 'Weight', 'Fat to Lose', 'Timeline', 'Decent Shape?'],
+        ['Minimum', '20%', '90kg', '10.5kg', '21 weeks', '✓ Yes'],
+        ['Good', '18%', '88kg', '12.7kg', '25 weeks', '✓✓ Yes'],
+        ['Excellent', '16%', '85kg', '14.9kg', '30 weeks', '✓✓✓ Yes']
+    ]
+
+    timeline_table = Table(timeline_data, colWidths=[1.1*inch, 1.1*inch, 0.9*inch, 1.1*inch, 1.1*inch, 1.2*inch])
+    timeline_table.setStyle(TableStyle([
+        ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#2ca02c')),
+        ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+        ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+        ('FONTSIZE', (0, 0), (-1, 0), 9),
+        ('BACKGROUND', (0, 1), (-1, -1), colors.HexColor('#e6ffe6')),
+        ('GRID', (0, 0), (-1, -1), 1, colors.grey),
+        ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, colors.HexColor('#f5fff5')]),
+        ('FONTSIZE', (0, 1), (-1, -1), 8),
+    ]))
+
+    content.append(timeline_table)
+    content.append(Spacer(1, 0.2*inch))
+
+    # Weekly Projections
+    content.append(Paragraph("Expected Progress by Week", styles['section']))
+    content.append(Spacer(1, 0.1*inch))
+
+    projection_data = [
+        ['Week', 'Expected Weight', 'Est. Body Fat %', 'Status'],
+        ['0 (Now)', '95.0 kg', '30.0%', 'Starting'],
+        ['4', '93.0 kg', '29.2%', 'Adjusting'],
+        ['8', '91.0 kg', '28.4%', 'Noticing changes'],
+        ['12', '89.0 kg', '27.6%', 'Looking leaner'],
+        ['16', '87.0 kg', '26.8%', 'Decent shape'],
+        ['20', '85.0 kg', '26.0%', 'Good shape'],
+        ['24', '83.0 kg', '25.2%', 'Very good shape']
+    ]
+
+    projection_table = Table(projection_data, colWidths=[1.2*inch, 1.5*inch, 1.5*inch, 1.8*inch])
+    projection_table.setStyle(TableStyle([
+        ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#ff9500')),
+        ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+        ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+        ('FONTSIZE', (0, 0), (-1, 0), 9),
+        ('BACKGROUND', (0, 1), (-1, -1), colors.HexColor('#ffe6cc')),
+        ('GRID', (0, 0), (-1, -1), 1, colors.grey),
+        ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, colors.HexColor('#fff5e6')]),
+        ('FONTSIZE', (0, 1), (-1, -1), 8),
+    ]))
+
+    content.append(projection_table)
+    content.append(Spacer(1, 0.15*inch))
+
+    content.append(Paragraph("Key Note: Assumes 0.5kg/week fat loss, consistent training + nutrition + sleep", styles['normal']))
+
+    return content
+
+
 def create_fasting_nutrition_section(styles):
     """Create fasting nutrition guide section"""
     content = []
@@ -523,6 +622,10 @@ def generate_pdf(input_file='data/routine.json', output_file='routine.pdf'):
         story.append(Spacer(1, 0.2*inch))
         story.extend(create_measurements_section(measurements, styles))
 
+    story.append(PageBreak())
+
+    # Analytics page
+    story.extend(create_analytics_section(styles))
     story.append(PageBreak())
 
     # One page per day
