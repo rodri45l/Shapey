@@ -1,211 +1,367 @@
 {
   "user_stats": {
-    "current_weight_kg": 75.0,
-    "body_fat_percent": 18.5,
-    "resting_heart_rate": 62,
-    "hrv": 45,
+    "current_weight_kg": 95.0,
+    "body_fat_percent": 22.0,
+    "resting_heart_rate": 65,
+    "hrv": 42,
     "last_sleep_hours": 7.5,
     "last_updated": "2026-04-19"
   },
+  "macro_targets": {
+    "protein_g": 209,
+    "carbs_g": 332,
+    "fats_g": 95,
+    "total_calories": 2692,
+    "goal": "fat_loss_strength_gain"
+  },
   "weekly_routine": {
     "Monday": {
-      "day_name": "Chest & Triceps",
+      "day_name": "Push A (Chest & Triceps)",
+      "day_type": "strength",
       "gym_session": {
         "enabled": true,
-        "duration_minutes": 60,
+        "duration_minutes": 55,
+        "focus": "Hypertrophy + strength",
         "exercises": [
           {
-            "name": "Bench Press",
+            "name": "Barbell Bench Press",
             "sets": 4,
-            "reps": "8",
-            "weight_kg": 100
+            "reps": "6-8",
+            "weight_kg": 115,
+            "rest_seconds": 90,
+            "notes": "Main compound lift"
           },
           {
             "name": "Incline Dumbbell Press",
             "sets": 3,
-            "reps": "10",
-            "weight_kg": 45
+            "reps": "8-10",
+            "weight_kg": 50,
+            "rest_seconds": 60,
+            "notes": "Upper chest"
           },
           {
-            "name": "Tricep Dips",
+            "name": "Cable Flyes",
             "sets": 3,
-            "reps": "12",
-            "weight_kg": "bodyweight"
+            "reps": "12-15",
+            "weight_kg": 30,
+            "rest_seconds": 45,
+            "notes": "Chest isolation"
+          },
+          {
+            "name": "Rope Tricep Pushdown",
+            "sets": 3,
+            "reps": "12-15",
+            "weight_kg": 25,
+            "rest_seconds": 45,
+            "notes": "Tricep finisher"
           }
         ]
       },
       "running_session": {
         "enabled": false
       },
-      "protein_intake_grams": 180
+      "nutrition": {
+        "protein_g": 209,
+        "carbs_g": 370,
+        "fats_g": 95,
+        "notes": "High carbs for gym volume"
+      }
     },
     "Tuesday": {
-      "day_name": "Back & Biceps",
+      "day_name": "Pull A (Back & Biceps)",
+      "day_type": "mixed",
       "gym_session": {
         "enabled": true,
-        "duration_minutes": 60,
+        "duration_minutes": 55,
+        "focus": "Back strength + bicep hypertrophy",
         "exercises": [
           {
             "name": "Deadlifts",
             "sets": 3,
-            "reps": "5",
-            "weight_kg": 140
+            "reps": "5-6",
+            "weight_kg": 200,
+            "rest_seconds": 120,
+            "notes": "Max strength compound"
           },
           {
-            "name": "Bent Over Rows",
+            "name": "Barbell Rows",
             "sets": 4,
-            "reps": "8",
-            "weight_kg": 90
+            "reps": "6-8",
+            "weight_kg": 140,
+            "rest_seconds": 90,
+            "notes": "Primary back builder"
+          },
+          {
+            "name": "Lat Pulldowns",
+            "sets": 3,
+            "reps": "10-12",
+            "weight_kg": 90,
+            "rest_seconds": 60,
+            "notes": "Back width"
           },
           {
             "name": "Barbell Curls",
             "sets": 3,
-            "reps": "10",
-            "weight_kg": 45
+            "reps": "8-10",
+            "weight_kg": 50,
+            "rest_seconds": 60,
+            "notes": "Bicep strength"
           }
         ]
       },
       "running_session": {
         "enabled": true,
+        "type": "HIIT",
         "duration_minutes": 20,
-        "type": "steady",
-        "distance_km": 3.0,
-        "pace_kmh": 9.0
+        "modality": "Treadmill or outdoor",
+        "protocol": "5min warmup + 8x(1min hard / 1min easy) + 2min cool down",
+        "notes": "Evening session, 4-6 hours post-gym"
       },
-      "protein_intake_grams": 190
+      "nutrition": {
+        "protein_g": 209,
+        "carbs_g": 365,
+        "fats_g": 95,
+        "notes": "High carbs for gym + cardio"
+      }
     },
     "Wednesday": {
-      "day_name": "Legs",
+      "day_name": "Legs (Strength Focus)",
+      "day_type": "strength_intense",
       "gym_session": {
         "enabled": true,
-        "duration_minutes": 75,
+        "duration_minutes": 60,
+        "focus": "Quad and glute strength",
         "exercises": [
           {
-            "name": "Squats",
+            "name": "Barbell Squats",
             "sets": 4,
-            "reps": "8",
-            "weight_kg": 120
+            "reps": "5-6",
+            "weight_kg": 180,
+            "rest_seconds": 120,
+            "notes": "Primary lower body lift"
+          },
+          {
+            "name": "Romanian Deadlifts",
+            "sets": 3,
+            "reps": "8-10",
+            "weight_kg": 160,
+            "rest_seconds": 90,
+            "notes": "Hamstring & glute"
           },
           {
             "name": "Leg Press",
             "sets": 3,
-            "reps": "10",
-            "weight_kg": 300
+            "reps": "10-12",
+            "weight_kg": 400,
+            "rest_seconds": 60,
+            "notes": "Volume work"
           },
           {
             "name": "Leg Curls",
             "sets": 3,
-            "reps": "12",
-            "weight_kg": 80
+            "reps": "12-15",
+            "weight_kg": 80,
+            "rest_seconds": 45,
+            "notes": "Hamstring isolation"
           },
           {
             "name": "Calf Raises",
             "sets": 3,
-            "reps": "15",
-            "weight_kg": 150
+            "reps": "15-20",
+            "weight_kg": 200,
+            "rest_seconds": 45,
+            "notes": "Calf finisher"
           }
         ]
       },
       "running_session": {
-        "enabled": false
+        "enabled": false,
+        "notes": "Rest from cardio, legs are demanding"
       },
-      "protein_intake_grams": 200
+      "nutrition": {
+        "protein_g": 209,
+        "carbs_g": 395,
+        "fats_g": 95,
+        "notes": "Highest carbs - most intense day"
+      }
     },
     "Thursday": {
-      "day_name": "Shoulders & Arms",
+      "day_name": "Push B (Shoulders & Arms)",
+      "day_type": "mixed",
       "gym_session": {
         "enabled": true,
-        "duration_minutes": 60,
+        "duration_minutes": 50,
+        "focus": "Shoulder strength + arm hypertrophy",
         "exercises": [
           {
-            "name": "Military Press",
+            "name": "Overhead Press",
             "sets": 4,
-            "reps": "8",
-            "weight_kg": 70
+            "reps": "6-8",
+            "weight_kg": 75,
+            "rest_seconds": 90,
+            "notes": "Primary shoulder strength"
           },
           {
             "name": "Lateral Raises",
             "sets": 3,
-            "reps": "12",
-            "weight_kg": 20
+            "reps": "12-15",
+            "weight_kg": 25,
+            "rest_seconds": 45,
+            "notes": "Shoulder width"
+          },
+          {
+            "name": "Close-Grip Bench Press",
+            "sets": 3,
+            "reps": "8-10",
+            "weight_kg": 100,
+            "rest_seconds": 60,
+            "notes": "Tricep + chest"
+          },
+          {
+            "name": "Dumbbell Curls",
+            "sets": 3,
+            "reps": "10-12",
+            "weight_kg": 35,
+            "rest_seconds": 60,
+            "notes": "Bicep volume"
+          }
+        ]
+      },
+      "running_session": {
+        "enabled": true,
+        "type": "Steady State",
+        "duration_minutes": 25,
+        "modality": "Running or bike",
+        "protocol": "Easy pace, ~70% max HR (can hold conversation)",
+        "timing": "Morning, 2-3 hours before gym or evening 4+ hours post-gym",
+        "notes": "Fat burning zone, low impact on recovery"
+      },
+      "nutrition": {
+        "protein_g": 209,
+        "carbs_g": 355,
+        "fats_g": 95,
+        "notes": "Moderate carbs + cardio"
+      }
+    },
+    "Friday": {
+      "day_name": "Pull B (Back Volume)",
+      "day_type": "strength",
+      "gym_session": {
+        "enabled": true,
+        "duration_minutes": 55,
+        "focus": "Back hypertrophy + lat width",
+        "exercises": [
+          {
+            "name": "Weighted Pull-ups",
+            "sets": 4,
+            "reps": "6-8",
+            "weight_kg": 25,
+            "rest_seconds": 90,
+            "notes": "Back width primary"
+          },
+          {
+            "name": "Seal Row (Machine or dumbbell)",
+            "sets": 3,
+            "reps": "8-10",
+            "weight_kg": 110,
+            "rest_seconds": 75,
+            "notes": "Back thickness"
           },
           {
             "name": "Face Pulls",
             "sets": 3,
-            "reps": "15",
-            "weight_kg": 40
-          }
-        ]
-      },
-      "running_session": {
-        "enabled": true,
-        "duration_minutes": 30,
-        "type": "intervals",
-        "distance_km": 4.5,
-        "pace_kmh": 10.0
-      },
-      "protein_intake_grams": 180
-    },
-    "Friday": {
-      "day_name": "Full Body",
-      "gym_session": {
-        "enabled": true,
-        "duration_minutes": 70,
-        "exercises": [
-          {
-            "name": "Power Cleans",
-            "sets": 4,
-            "reps": "5",
-            "weight_kg": 85
+            "reps": "15-20",
+            "weight_kg": 35,
+            "rest_seconds": 45,
+            "notes": "Rear delts + shoulder health"
           },
           {
-            "name": "Front Squats",
+            "name": "Preacher Curls",
             "sets": 3,
-            "reps": "8",
-            "weight_kg": 100
-          },
-          {
-            "name": "Push Press",
-            "sets": 3,
-            "reps": "6",
-            "weight_kg": 75
-          },
-          {
-            "name": "Rows",
-            "sets": 3,
-            "reps": "8",
-            "weight_kg": 85
+            "reps": "10-12",
+            "weight_kg": 45,
+            "rest_seconds": 60,
+            "notes": "Bicep peak"
           }
         ]
       },
       "running_session": {
         "enabled": false
       },
-      "protein_intake_grams": 195
+      "nutrition": {
+        "protein_g": 209,
+        "carbs_g": 340,
+        "fats_g": 95,
+        "notes": "Gym focus, can reduce carbs slightly"
+      }
     },
     "Saturday": {
-      "day_name": "Long Run",
+      "day_name": "Active Recovery / Optional Conditioning",
+      "day_type": "recovery",
       "gym_session": {
         "enabled": false
       },
       "running_session": {
         "enabled": true,
-        "duration_minutes": 60,
-        "type": "endurance",
-        "distance_km": 10.0,
-        "pace_kmh": 8.5
+        "type": "Optional",
+        "duration_minutes": 30,
+        "modality": "Running or bike",
+        "protocol": "Very easy, low intensity - only if feeling good",
+        "notes": "Only do if recovered well. Can skip if sore/tired"
       },
-      "protein_intake_grams": 150
+      "nutrition": {
+        "protein_g": 180,
+        "carbs_g": 250,
+        "fats_g": 85,
+        "notes": "Lower calories on rest day"
+      }
     },
     "Sunday": {
-      "day_name": "Rest & Recovery",
+      "day_name": "Complete Rest",
+      "day_type": "rest",
       "gym_session": {
         "enabled": false
       },
       "running_session": {
         "enabled": false
       },
-      "protein_intake_grams": 120
+      "nutrition": {
+        "protein_g": 180,
+        "carbs_g": 250,
+        "fats_g": 85,
+        "notes": "Lower calories, focus on recovery & sleep"
+      }
     }
+  },
+  "running_protocols": {
+    "HIIT_cardio": {
+      "Tuesday": "5min warmup + 8x(1min @90%HR / 1min easy) + 2min cool down = 20-25 min total",
+      "goal": "Fat loss + cardiovascular fitness",
+      "intensity": "High"
+    },
+    "steady_state": {
+      "Thursday": "Easy pace, can hold conversation, ~65-70% max HR = 25-30 min total",
+      "goal": "Fat burning, recovery active",
+      "intensity": "Low-Moderate"
+    }
+  },
+  "weekly_summary": {
+    "gym_days": 5,
+    "cardio_sessions": 2,
+    "rest_days": 2,
+    "total_gym_hours": "~4.75 hours",
+    "total_cardio": "~45 minutes",
+    "calorie_deficit": "~500 cal/day",
+    "expected_fat_loss": "~0.5kg/week",
+    "training_focus": "Strength + Fat Loss",
+    "split": "Push/Pull/Legs (5-day)"
+  },
+  "notes": {
+    "meal_timing": "Eat 30-60 min post-workout for gym days",
+    "sleep": "Target 8 hours minimum for recovery",
+    "hydration": "Minimum 4L water per day",
+    "progression": "Increase weights when hitting top of rep range for 2 consecutive weeks",
+    "deload": "Every 4 weeks, reduce weights by 40% and do 3x5-8 reps",
+    "nutrition_adjustment": "If not losing weight after 2 weeks, reduce carbs by 30g"
   }
 }

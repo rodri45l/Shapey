@@ -100,7 +100,8 @@ def create_overview_table(routine):
         session = routine['weekly_routine'][day]
         gym = '✓' if session['gym_session']['enabled'] else '—'
         running = '✓' if session['running_session']['enabled'] else '—'
-        protein = session['protein_intake_grams']
+        # Handle both old and new format
+        protein = session.get('protein_intake_grams', session.get('nutrition', {}).get('protein_g', '—'))
 
         data.append([
             day,
@@ -166,18 +167,53 @@ def create_day_page(day_name, session, routine_data, styles):
             f"Type: {running['type'].capitalize()} | Duration: {running['duration_minutes']} min",
             styles['normal']
         ))
-        content.append(Paragraph(
-            f"Distance: {running['distance_km']} km | Pace: {running['pace_kmh']} km/h",
-            styles['normal']
-        ))
+
+        # Display protocol if available
+        if running.get('protocol'):
+            content.append(Paragraph(
+                f"Protocol: {running['protocol']}",
+                styles['normal']
+            ))
+
+        # Display old format if available
+        if running.get('distance_km') and running.get('pace_kmh'):
+            content.append(Paragraph(
+                f"Distance: {running['distance_km']} km | Pace: {running['pace_kmh']} km/h",
+                styles['normal']
+            ))
+
+        # Display modality if available
+        if running.get('modality'):
+            content.append(Paragraph(
+                f"Modality: {running['modality']}",
+                styles['normal']
+            ))
+
+        if running.get('notes'):
+            content.append(Paragraph(
+                f"Notes: {running['notes']}",
+                styles['normal']
+            ))
+
         content.append(Spacer(1, 0.2*inch))
 
-    # Protein intake
-    content.append(Paragraph("🍗 Protein Intake", styles['section']))
+    # Nutrition targets
+    nutrition = session.get('nutrition', {})
+    protein = nutrition.get('protein_g', 209)
+    carbs = nutrition.get('carbs_g', 332)
+    fats = nutrition.get('fats_g', 95)
+
+    content.append(Paragraph("🍗 Nutrition Targets", styles['section']))
     content.append(Paragraph(
-        f"Target: {session['protein_intake_grams']} grams",
+        f"Protein: {protein}g | Carbs: {carbs}g | Fats: {fats}g",
         styles['normal']
     ))
+
+    if nutrition.get('notes'):
+        content.append(Paragraph(
+            f"Note: {nutrition['notes']}",
+            styles['normal']
+        ))
 
     return content
 
@@ -190,18 +226,21 @@ def create_macro_section(routine_data, styles):
     content.append(Spacer(1, 0.1*inch))
 
     days = list(routine_data['weekly_routine'].keys())
-    macro_data = [['Day', 'Protein', 'Carbs', 'Fats', 'Notes']]
+    macro_data = [['Day', 'Protein', 'Carbs', 'Fats', 'Calories']]
 
     for day in days:
         session = routine_data['weekly_routine'][day]
-        protein = session['protein_intake_grams']
-        day_type = 'Gym' if session['gym_session']['enabled'] else 'Running' if session['running_session']['enabled'] else 'Rest'
+        nutrition = session.get('nutrition', {})
+        protein = nutrition.get('protein_g', 209)
+        carbs = nutrition.get('carbs_g', 332)
+        fats = nutrition.get('fats_g', 95)
+        day_type = 'Gym' if session['gym_session']['enabled'] else 'Cardio' if session['running_session']['enabled'] else 'Rest'
 
         macro_data.append([
             day,
             f"{protein}g",
-            "250g",  # Default carbs
-            "75g",   # Default fats
+            f"{carbs}g",
+            f"{fats}g",
             day_type
         ])
 
