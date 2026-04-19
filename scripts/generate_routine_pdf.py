@@ -368,6 +368,70 @@ def create_measurements_section(measurements, styles):
     return content
 
 
+def create_fasting_nutrition_section(styles):
+    """Create fasting nutrition guide section"""
+    content = []
+
+    content.append(Paragraph("🍗 Intermittent Fasting + Protein Protocol", styles['title']))
+    content.append(Spacer(1, 0.2*inch))
+
+    content.append(Paragraph("Your Setup", styles['section']))
+    setup_text = "210g Protein/Day | 3 Meals (Lunch, Snack, Dinner) | 2 Scoops HSN Clear Whey (Peach)"
+    content.append(Paragraph(setup_text, styles['normal']))
+    content.append(Spacer(1, 0.15*inch))
+
+    # Daily breakdown
+    content.append(Paragraph("Daily Protein Distribution", styles['section']))
+    content.append(Spacer(1, 0.1*inch))
+
+    fasting_data = [
+        ['Meal', 'Protein', 'Portion', 'Example'],
+        ['Lunch', '80g', '280g chicken', 'Breast fillets + rice'],
+        ['Snack', '50g', '2 scoops shake', 'HSN Clear Whey'],
+        ['Dinner', '100g', '320g beef/salmon', 'Lean meat + potato'],
+        ['TOTAL', '230g', '-', '~2000-2100 cal']
+    ]
+
+    fasting_table = Table(fasting_data, colWidths=[1.2*inch, 1*inch, 1.3*inch, 1.8*inch])
+    fasting_table.setStyle(TableStyle([
+        ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#ff9500')),
+        ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+        ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+        ('FONTSIZE', (0, 0), (-1, 0), 10),
+        ('BOTTOMPADDING', (0, 0), (-1, 0), 10),
+        ('BACKGROUND', (0, 1), (-1, -1), colors.HexColor('#ffe6cc')),
+        ('GRID', (0, 0), (-1, -1), 1, colors.grey),
+        ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, colors.HexColor('#fff5e6')]),
+        ('FONTSIZE', (0, 1), (-1, -1), 9),
+    ]))
+
+    content.append(fasting_table)
+    content.append(Spacer(1, 0.2*inch))
+
+    # Key tips
+    content.append(Paragraph("Success Tips", styles['section']))
+    tips = [
+        "• <b>Consistency:</b> Same portions every day = easier to hit 210g",
+        "• <b>Meal Prep:</b> Cook chicken/meat in batches 3-4x per week",
+        "• <b>Timing:</b> Lunch 11am-1pm, Snack 3-4pm, Dinner 7-8pm (example)",
+        "• <b>Friday Plyos:</b> Move to afternoon if possible (fasted morning training = muscle loss risk)",
+        "• <b>HSN Shake:</b> Mix with water (low cal) or milk (more calories)"
+    ]
+
+    for tip in tips:
+        content.append(Paragraph(tip, styles['normal']))
+
+    content.append(Spacer(1, 0.15*inch))
+
+    # Shopping list
+    content.append(Paragraph("Weekly Shopping", styles['section']))
+    shopping_text = "<b>Protein:</b> 1.5-2kg chicken + 1.2-1.5kg beef/salmon | <b>Carbs:</b> Rice, sweet potatoes | <b>Est. Cost:</b> €50-60/month"
+    content.append(Paragraph(shopping_text, styles['normal']))
+
+    return content
+
+
 def create_stats_page(routine_data, progressions, measurements, styles):
     """Create the stats summary page"""
     stats = routine_data['user_stats']
@@ -436,6 +500,10 @@ def generate_pdf(input_file='data/routine.json', output_file='routine.pdf'):
     story.append(Paragraph("Weekly Gym Routine", styles['title']))
     story.append(Spacer(1, 0.3*inch))
     story.append(create_overview_table(routine_data))
+    story.append(PageBreak())
+
+    # Fasting Nutrition page
+    story.extend(create_fasting_nutrition_section(styles))
     story.append(PageBreak())
 
     # Macro targets page
