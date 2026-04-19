@@ -27,16 +27,16 @@
             "name": "Barbell Bench Press",
             "sets": 4,
             "reps": "6-8",
-            "weight_kg": 115,
-            "rest_seconds": 90,
-            "notes": "Main compound lift"
+            "weight_kg": 65,
+            "rest_seconds": 180,
+            "notes": "Main compound lift - 3-4 min rest for strength"
           },
           {
             "name": "Incline Dumbbell Press",
             "sets": 3,
             "reps": "8-10",
-            "weight_kg": 50,
-            "rest_seconds": 60,
+            "weight_kg": 25,
+            "rest_seconds": 90,
             "notes": "Upper chest"
           },
           {
@@ -77,35 +77,35 @@
         "focus": "Back strength + bicep hypertrophy",
         "exercises": [
           {
-            "name": "Barbell Rows",
+            "name": "Pulley Rows",
             "sets": 4,
-            "reps": "5-6",
-            "weight_kg": 140,
-            "rest_seconds": 90,
-            "notes": "Primary back strength"
+            "reps": "6-8",
+            "weight_kg": 55,
+            "rest_seconds": 180,
+            "notes": "Primary back strength - 3-4 min rest for strength"
           },
           {
             "name": "Lat Pulldowns",
             "sets": 3,
             "reps": "8-10",
-            "weight_kg": 90,
-            "rest_seconds": 60,
+            "weight_kg": 50,
+            "rest_seconds": 90,
             "notes": "Back width"
           },
           {
             "name": "T-Bar Rows",
             "sets": 3,
             "reps": "8-10",
-            "weight_kg": 150,
-            "rest_seconds": 60,
+            "weight_kg": 60,
+            "rest_seconds": 90,
             "notes": "Back thickness"
           },
           {
-            "name": "Barbell Curls",
+            "name": "Dumbbell Curls",
             "sets": 3,
             "reps": "8-10",
-            "weight_kg": 50,
-            "rest_seconds": 60,
+            "weight_kg": 18,
+            "rest_seconds": 90,
             "notes": "Bicep strength"
           }
         ]
@@ -137,41 +137,41 @@
           {
             "name": "Barbell Squats",
             "sets": 4,
-            "reps": "5-6",
-            "weight_kg": 180,
-            "rest_seconds": 120,
-            "notes": "Primary lower body lift"
+            "reps": "6-8",
+            "weight_kg": 90,
+            "rest_seconds": 180,
+            "notes": "Primary lower body lift - 3-4 min rest for strength"
           },
           {
             "name": "Romanian Deadlifts",
             "sets": 3,
             "reps": "8-10",
-            "weight_kg": 160,
+            "weight_kg": 70,
             "rest_seconds": 90,
             "notes": "Hamstring & glute"
           },
           {
             "name": "Leg Press",
             "sets": 3,
-            "reps": "10-12",
-            "weight_kg": 400,
-            "rest_seconds": 60,
+            "reps": "8-10",
+            "weight_kg": 200,
+            "rest_seconds": 90,
             "notes": "Volume work"
           },
           {
             "name": "Leg Curls",
             "sets": 3,
-            "reps": "12-15",
-            "weight_kg": 80,
-            "rest_seconds": 45,
+            "reps": "10-12",
+            "weight_kg": 50,
+            "rest_seconds": 60,
             "notes": "Hamstring isolation"
           },
           {
             "name": "Calf Raises",
             "sets": 3,
-            "reps": "15-20",
-            "weight_kg": 200,
-            "rest_seconds": 45,
+            "reps": "12-15",
+            "weight_kg": 100,
+            "rest_seconds": 60,
             "notes": "Calf finisher"
           }
         ]
@@ -208,33 +208,33 @@
             "name": "Overhead Press",
             "sets": 4,
             "reps": "6-8",
-            "weight_kg": 75,
-            "rest_seconds": 90,
-            "notes": "Primary shoulder strength"
+            "weight_kg": 25,
+            "rest_seconds": 180,
+            "notes": "Primary shoulder strength - 3-4 min rest for strength"
           },
           {
             "name": "Lateral Raises",
             "sets": 3,
-            "reps": "12-15",
-            "weight_kg": 25,
-            "rest_seconds": 45,
+            "reps": "10-12",
+            "weight_kg": 10,
+            "rest_seconds": 60,
             "notes": "Shoulder width"
           },
           {
             "name": "Close-Grip Bench Press",
             "sets": 3,
             "reps": "8-10",
-            "weight_kg": 100,
-            "rest_seconds": 60,
+            "weight_kg": 50,
+            "rest_seconds": 90,
             "notes": "Tricep + chest"
           },
           {
             "name": "Dumbbell Curls",
             "sets": 3,
-            "reps": "10-12",
-            "weight_kg": 35,
-            "rest_seconds": 60,
-            "notes": "Bicep volume"
+            "reps": "8-10",
+            "weight_kg": 16,
+            "rest_seconds": 90,
+            "notes": "Bicep strength"
           }
         ]
       },
@@ -290,8 +290,8 @@
             "name": "Pallof Press (cable or band)",
             "sets": 3,
             "reps": "10",
-            "weight_kg": 40,
-            "rest_seconds": 60,
+            "weight_kg": 20,
+            "rest_seconds": 90,
             "notes": "Anti-rotation core (tackle stability)"
           },
           {
