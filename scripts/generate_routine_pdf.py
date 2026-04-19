@@ -113,7 +113,7 @@ def create_overview_table(routine):
             str(protein)
         ])
 
-    table = Table(data, colWidths=[1.2*inch, 1.5*inch, 0.8*inch, 0.8*inch, 1*inch])
+    table = Table(data, colWidths=[1*inch, 2.5*inch, 0.8*inch, 0.8*inch, 1*inch])
 
     table.setStyle(TableStyle([
         ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#1f77b4')),
