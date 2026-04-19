@@ -1,0 +1,146 @@
+{
+  "exercises": {
+    "bench_press": {
+      "display_name": "Bench Press",
+      "category": "upper_body",
+      "current_max": {
+        "weight_kg": 100,
+        "reps": 5,
+        "date": "2026-04-19"
+      },
+      "all_time_pr": {
+        "weight_kg": 100,
+        "reps": 5,
+        "date": "2026-04-19"
+      },
+      "history": [
+        {
+          "date": "2026-04-19",
+          "weight_kg": 100,
+          "reps": 5,
+          "session_name": "Monday Chest"
+        },
+        {
+          "date": "2026-04-15",
+          "weight_kg": 97.5,
+          "reps": 5,
+          "session_name": "Monday Chest"
+        }
+      ],
+      "progression_tracking": {
+        "last_increase_date": "2026-04-15",
+        "weeks_since_increase": 0.5,
+        "next_suggested_weight_kg": 102.5,
+        "increase_increment_kg": 2.5,
+        "weekly_target_increase_kg": 2.5
+      }
+    },
+    "squats": {
+      "display_name": "Squats",
+      "category": "lower_body",
+      "current_max": {
+        "weight_kg": 140,
+        "reps": 5,
+        "date": "2026-04-19"
+      },
+      "all_time_pr": {
+        "weight_kg": 140,
+        "reps": 5,
+        "date": "2026-04-19"
+      },
+      "history": [
+        {
+          "date": "2026-04-19",
+          "weight_kg": 140,
+          "reps": 5,
+          "session_name": "Wednesday Legs"
+        },
+        {
+          "date": "2026-04-12",
+          "weight_kg": 135,
+          "reps": 5,
+          "session_name": "Wednesday Legs"
+        }
+      ],
+      "progression_tracking": {
+        "last_increase_date": "2026-04-12",
+        "weeks_since_increase": 1,
+        "next_suggested_weight_kg": 145,
+        "increase_increment_kg": 5,
+        "weekly_target_increase_kg": 5
+      }
+    },
+    "deadlift": {
+      "display_name": "Deadlift",
+      "category": "lower_body",
+      "current_max": {
+        "weight_kg": 180,
+        "reps": 3,
+        "date": "2026-04-19"
+      },
+      "all_time_pr": {
+        "weight_kg": 180,
+        "reps": 3,
+        "date": "2026-04-19"
+      },
+      "history": [
+        {
+          "date": "2026-04-19",
+          "weight_kg": 180,
+          "reps": 3,
+          "session_name": "Tuesday Back"
+        },
+        {
+          "date": "2026-04-12",
+          "weight_kg": 177.5,
+          "reps": 3,
+          "session_name": "Tuesday Back"
+        }
+      ],
+      "progression_tracking": {
+        "last_increase_date": "2026-04-12",
+        "weeks_since_increase": 1,
+        "next_suggested_weight_kg": 185,
+        "increase_increment_kg": 5,
+        "weekly_target_increase_kg": 5
+      }
+    },
+    "military_press": {
+      "display_name": "Military Press",
+      "category": "upper_body",
+      "current_max": {
+        "weight_kg": 70,
+        "reps": 5,
+        "date": "2026-04-19"
+      },
+      "all_time_pr": {
+        "weight_kg": 70,
+        "reps": 5,
+        "date": "2026-04-19"
+      },
+      "history": [
+        {
+          "date": "2026-04-19",
+          "weight_kg": 70,
+          "reps": 5,
+          "session_name": "Thursday Shoulders"
+        }
+      ],
+      "progression_tracking": {
+        "last_increase_date": "2026-04-19",
+        "weeks_since_increase": 0,
+        "next_suggested_weight_kg": 72.5,
+        "increase_increment_kg": 2.5,
+        "weekly_target_increase_kg": 2.5
+      }
+    }
+  },
+  "settings": {
+    "upper_body_increment_kg": 2.5,
+    "lower_body_increment_kg": 5,
+    "min_reps_for_increase": 5,
+    "deload_week_frequency": 4,
+    "last_deload_week": "2026-04-01",
+    "next_deload_week": "2026-04-29"
+  }
+}

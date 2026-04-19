@@ -1,8 +1,10 @@
 """
-Generate a PDF of the weekly gym routine from routine.json
+Generate a PDF of the weekly gym routine from routine.json (Enhanced)
+Now includes: Macros, Strength Progression, Body Metrics
 """
 
 import json
+import csv
 from datetime import datetime
 from reportlab.lib.pagesizes import letter, A4
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
@@ -19,6 +21,26 @@ def load_routine(filepath='data/routine.json'):
             return json.load(f)
     except FileNotFoundError:
         print(f"Error: {filepath} not found")
+        return None
+
+
+def load_progressions(filepath='data/exercise_progressions.json'):
+    """Load exercise progressions"""
+    try:
+        with open(filepath, 'r') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return None
+
+
+def load_latest_measurements(filepath='data/measurements.csv'):
+    """Load latest measurements"""
+    try:
+        with open(filepath, 'r') as f:
+            reader = csv.DictReader(f)
+            rows = list(reader)
+            return rows[-1] if rows else None
+    except FileNotFoundError:
         return None
 
 
@@ -160,7 +182,139 @@ def create_day_page(day_name, session, routine_data, styles):
     return content
 
 
-def create_stats_page(routine_data, styles):
+def create_macro_section(routine_data, styles):
+    """Create macro targets section"""
+    content = []
+
+    content.append(Paragraph("🥗 Daily Macro Targets", styles['section']))
+    content.append(Spacer(1, 0.1*inch))
+
+    days = list(routine_data['weekly_routine'].keys())
+    macro_data = [['Day', 'Protein', 'Carbs', 'Fats', 'Notes']]
+
+    for day in days:
+        session = routine_data['weekly_routine'][day]
+        protein = session['protein_intake_grams']
+        day_type = 'Gym' if session['gym_session']['enabled'] else 'Running' if session['running_session']['enabled'] else 'Rest'
+
+        macro_data.append([
+            day,
+            f"{protein}g",
+            "250g",  # Default carbs
+            "75g",   # Default fats
+            day_type
+        ])
+
+    macro_table = Table(macro_data, colWidths=[1.2*inch, 1.2*inch, 1.2*inch, 1.2*inch, 1.4*inch])
+    macro_table.setStyle(TableStyle([
+        ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#ff9500')),
+        ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+        ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+        ('FONTSIZE', (0, 0), (-1, 0), 10),
+        ('BOTTOMPADDING', (0, 0), (-1, 0), 10),
+        ('BACKGROUND', (0, 1), (-1, -1), colors.HexColor('#ffe6cc')),
+        ('GRID', (0, 0), (-1, -1), 1, colors.grey),
+        ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, colors.HexColor('#fff5e6')]),
+        ('FONTSIZE', (0, 1), (-1, -1), 9),
+    ]))
+
+    content.append(macro_table)
+    content.append(Spacer(1, 0.15*inch))
+
+    return content
+
+
+def create_strength_progression_section(progressions, styles):
+    """Create strength progression and suggestions"""
+    content = []
+
+    content.append(Paragraph("💪 Strength Progression", styles['section']))
+    content.append(Spacer(1, 0.1*inch))
+
+    if progressions and 'exercises' in progressions:
+        strength_data = [['Exercise', 'Current Max', 'Next Target']]
+
+        for name, exercise in progressions['exercises'].items():
+            try:
+                current = exercise['current_max']['weight_kg']
+                next_target = exercise['progression_tracking']['next_suggested_weight_kg']
+                display_name = exercise['display_name']
+
+                strength_data.append([
+                    display_name,
+                    f"{current} kg",
+                    f"{next_target} kg"
+                ])
+            except KeyError:
+                continue
+
+        if len(strength_data) > 1:
+            strength_table = Table(strength_data, colWidths=[2*inch, 1.5*inch, 1.5*inch])
+            strength_table.setStyle(TableStyle([
+                ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#d62728')),
+                ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+                ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+                ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+                ('FONTSIZE', (0, 0), (-1, 0), 10),
+                ('BOTTOMPADDING', (0, 0), (-1, 0), 10),
+                ('BACKGROUND', (0, 1), (-1, -1), colors.HexColor('#ffe6e6')),
+                ('GRID', (0, 0), (-1, -1), 1, colors.grey),
+                ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, colors.HexColor('#fff0f0')]),
+                ('FONTSIZE', (0, 1), (-1, -1), 9),
+            ]))
+
+            content.append(strength_table)
+            content.append(Spacer(1, 0.15*inch))
+
+    return content
+
+
+def create_measurements_section(measurements, styles):
+    """Create body measurements summary"""
+    content = []
+
+    content.append(Paragraph("📏 Body Measurements", styles['section']))
+    content.append(Spacer(1, 0.1*inch))
+
+    if measurements:
+        try:
+            meas_data = [
+                ['Metric', 'Current'],
+                ['Weight', f"{measurements.get('weight_kg', 'N/A')} kg"],
+            ]
+
+            if measurements.get('body_fat_percent'):
+                meas_data.append(['Body Fat', f"{measurements['body_fat_percent']}%"])
+
+            for key, label in [('waist_cm', 'Waist'), ('chest_cm', 'Chest'), ('arms_cm', 'Arms'), ('thighs_cm', 'Thighs')]:
+                if measurements.get(key):
+                    meas_data.append([label, f"{measurements[key]} cm"])
+
+            meas_table = Table(meas_data, colWidths=[2*inch, 2*inch])
+            meas_table.setStyle(TableStyle([
+                ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#1f77b4')),
+                ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+                ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
+                ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+                ('FONTSIZE', (0, 0), (-1, 0), 10),
+                ('BOTTOMPADDING', (0, 0), (-1, 0), 10),
+                ('BACKGROUND', (0, 1), (-1, -1), colors.white),
+                ('GRID', (0, 0), (-1, -1), 1, colors.grey),
+                ('FONTSIZE', (0, 1), (-1, -1), 9),
+                ('PADDING', (0, 0), (-1, -1), 8),
+            ]))
+
+            content.append(meas_table)
+            content.append(Spacer(1, 0.15*inch))
+
+        except Exception as e:
+            content.append(Paragraph(f"Error loading measurements: {e}", styles['normal']))
+
+    return content
+
+
+def create_stats_page(routine_data, progressions, measurements, styles):
     """Create the stats summary page"""
     stats = routine_data['user_stats']
     content = []
@@ -201,11 +355,15 @@ def create_stats_page(routine_data, styles):
 
 
 def generate_pdf(input_file='data/routine.json', output_file='routine.pdf'):
-    """Generate PDF from routine.json"""
+    """Generate PDF from routine.json (Enhanced)"""
 
     routine_data = load_routine(input_file)
     if routine_data is None:
         return
+
+    # Load additional data
+    progressions = load_progressions()
+    measurements = load_latest_measurements()
 
     # Create PDF
     doc = SimpleDocTemplate(
@@ -226,6 +384,25 @@ def generate_pdf(input_file='data/routine.json', output_file='routine.pdf'):
     story.append(create_overview_table(routine_data))
     story.append(PageBreak())
 
+    # Macro targets page
+    story.append(Paragraph("Weekly Nutrition Plan", styles['title']))
+    story.append(Spacer(1, 0.2*inch))
+    story.extend(create_macro_section(routine_data, styles))
+
+    # Strength progression page
+    if progressions:
+        story.append(Paragraph("Strength Progress", styles['title']))
+        story.append(Spacer(1, 0.2*inch))
+        story.extend(create_strength_progression_section(progressions, styles))
+
+    # Body measurements page
+    if measurements:
+        story.append(Paragraph("Body Metrics", styles['title']))
+        story.append(Spacer(1, 0.2*inch))
+        story.extend(create_measurements_section(measurements, styles))
+
+    story.append(PageBreak())
+
     # One page per day
     days = list(routine_data['weekly_routine'].keys())
     for day in days:
@@ -235,7 +412,7 @@ def generate_pdf(input_file='data/routine.json', output_file='routine.pdf'):
         story.append(PageBreak())
 
     # Stats page
-    stats_content = create_stats_page(routine_data, styles)
+    stats_content = create_stats_page(routine_data, progressions, measurements, styles)
     story.extend(stats_content)
 
     # Build PDF

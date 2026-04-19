@@ -1,2 +1,2 @@
-date,weight_kg,weight_lbs,body_fat_percent,notes
-2026-04-19,75.0,165.3,,starting weight
+date,weight_kg,weight_lbs,body_fat_percent,waist_cm,chest_cm,arms_cm,thighs_cm,notes
+2026-04-19,75.0,165.3,18.5,85,100,32,58,starting weight
