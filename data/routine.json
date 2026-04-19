@@ -1,0 +1,211 @@
+{
+  "user_stats": {
+    "current_weight_kg": 75.0,
+    "body_fat_percent": 18.5,
+    "resting_heart_rate": 62,
+    "hrv": 45,
+    "last_sleep_hours": 7.5,
+    "last_updated": "2026-04-19"
+  },
+  "weekly_routine": {
+    "Monday": {
+      "day_name": "Chest & Triceps",
+      "gym_session": {
+        "enabled": true,
+        "duration_minutes": 60,
+        "exercises": [
+          {
+            "name": "Bench Press",
+            "sets": 4,
+            "reps": "8",
+            "weight_kg": 100
+          },
+          {
+            "name": "Incline Dumbbell Press",
+            "sets": 3,
+            "reps": "10",
+            "weight_kg": 45
+          },
+          {
+            "name": "Tricep Dips",
+            "sets": 3,
+            "reps": "12",
+            "weight_kg": "bodyweight"
+          }
+        ]
+      },
+      "running_session": {
+        "enabled": false
+      },
+      "protein_intake_grams": 180
+    },
+    "Tuesday": {
+      "day_name": "Back & Biceps",
+      "gym_session": {
+        "enabled": true,
+        "duration_minutes": 60,
+        "exercises": [
+          {
+            "name": "Deadlifts",
+            "sets": 3,
+            "reps": "5",
+            "weight_kg": 140
+          },
+          {
+            "name": "Bent Over Rows",
+            "sets": 4,
+            "reps": "8",
+            "weight_kg": 90
+          },
+          {
+            "name": "Barbell Curls",
+            "sets": 3,
+            "reps": "10",
+            "weight_kg": 45
+          }
+        ]
+      },
+      "running_session": {
+        "enabled": true,
+        "duration_minutes": 20,
+        "type": "steady",
+        "distance_km": 3.0,
+        "pace_kmh": 9.0
+      },
+      "protein_intake_grams": 190
+    },
+    "Wednesday": {
+      "day_name": "Legs",
+      "gym_session": {
+        "enabled": true,
+        "duration_minutes": 75,
+        "exercises": [
+          {
+            "name": "Squats",
+            "sets": 4,
+            "reps": "8",
+            "weight_kg": 120
+          },
+          {
+            "name": "Leg Press",
+            "sets": 3,
+            "reps": "10",
+            "weight_kg": 300
+          },
+          {
+            "name": "Leg Curls",
+            "sets": 3,
+            "reps": "12",
+            "weight_kg": 80
+          },
+          {
+            "name": "Calf Raises",
+            "sets": 3,
+            "reps": "15",
+            "weight_kg": 150
+          }
+        ]
+      },
+      "running_session": {
+        "enabled": false
+      },
+      "protein_intake_grams": 200
+    },
+    "Thursday": {
+      "day_name": "Shoulders & Arms",
+      "gym_session": {
+        "enabled": true,
+        "duration_minutes": 60,
+        "exercises": [
+          {
+            "name": "Military Press",
+            "sets": 4,
+            "reps": "8",
+            "weight_kg": 70
+          },
+          {
+            "name": "Lateral Raises",
+            "sets": 3,
+            "reps": "12",
+            "weight_kg": 20
+          },
+          {
+            "name": "Face Pulls",
+            "sets": 3,
+            "reps": "15",
+            "weight_kg": 40
+          }
+        ]
+      },
+      "running_session": {
+        "enabled": true,
+        "duration_minutes": 30,
+        "type": "intervals",
+        "distance_km": 4.5,
+        "pace_kmh": 10.0
+      },
+      "protein_intake_grams": 180
+    },
+    "Friday": {
+      "day_name": "Full Body",
+      "gym_session": {
+        "enabled": true,
+        "duration_minutes": 70,
+        "exercises": [
+          {
+            "name": "Power Cleans",
+            "sets": 4,
+            "reps": "5",
+            "weight_kg": 85
+          },
+          {
+            "name": "Front Squats",
+            "sets": 3,
+            "reps": "8",
+            "weight_kg": 100
+          },
+          {
+            "name": "Push Press",
+            "sets": 3,
+            "reps": "6",
+            "weight_kg": 75
+          },
+          {
+            "name": "Rows",
+            "sets": 3,
+            "reps": "8",
+            "weight_kg": 85
+          }
+        ]
+      },
+      "running_session": {
+        "enabled": false
+      },
+      "protein_intake_grams": 195
+    },
+    "Saturday": {
+      "day_name": "Long Run",
+      "gym_session": {
+        "enabled": false
+      },
+      "running_session": {
+        "enabled": true,
+        "duration_minutes": 60,
+        "type": "endurance",
+        "distance_km": 10.0,
+        "pace_kmh": 8.5
+      },
+      "protein_intake_grams": 150
+    },
+    "Sunday": {
+      "day_name": "Rest & Recovery",
+      "gym_session": {
+        "enabled": false
+      },
+      "running_session": {
+        "enabled": false
+      },
+      "protein_intake_grams": 120
+    }
+  }
+}
