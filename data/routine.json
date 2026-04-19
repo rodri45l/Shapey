@@ -244,44 +244,60 @@
       }
     },
     "Friday": {
-      "day_name": "Pull B (Back Volume)",
-      "day_type": "strength",
+      "day_name": "Plyometrics + Core (Rugby Power)",
+      "day_type": "explosive",
       "gym_session": {
         "enabled": true,
-        "duration_minutes": 55,
-        "focus": "Back hypertrophy + lat width",
+        "duration_minutes": 50,
+        "focus": "Explosive power + core stability (rugby-specific)",
         "exercises": [
           {
-            "name": "Weighted Pull-ups",
+            "name": "Box Jumps",
             "sets": 4,
-            "reps": "6-8",
-            "weight_kg": 25,
+            "reps": "5",
+            "weight_kg": "bodyweight",
+            "rest_seconds": 120,
+            "notes": "Lower body explosion"
+          },
+          {
+            "name": "Medicine Ball Chest Pass (against wall)",
+            "sets": 3,
+            "reps": "8",
+            "weight_kg": 5,
             "rest_seconds": 90,
-            "notes": "Back width primary"
+            "notes": "Upper body power + core"
           },
           {
-            "name": "Seal Row (Machine or dumbbell)",
+            "name": "Broad Jumps",
             "sets": 3,
-            "reps": "8-10",
-            "weight_kg": 110,
-            "rest_seconds": 75,
-            "notes": "Back thickness"
+            "reps": "5",
+            "weight_kg": "bodyweight",
+            "rest_seconds": 120,
+            "notes": "Horizontal power (rugby movement)"
           },
           {
-            "name": "Face Pulls",
+            "name": "Pallof Press (cable or band)",
             "sets": 3,
-            "reps": "15-20",
-            "weight_kg": 35,
-            "rest_seconds": 45,
-            "notes": "Rear delts + shoulder health"
-          },
-          {
-            "name": "Preacher Curls",
-            "sets": 3,
-            "reps": "10-12",
-            "weight_kg": 45,
+            "reps": "10",
+            "weight_kg": 40,
             "rest_seconds": 60,
-            "notes": "Bicep peak"
+            "notes": "Anti-rotation core (tackle stability)"
+          },
+          {
+            "name": "Dead Bugs",
+            "sets": 3,
+            "reps": "12",
+            "weight_kg": "bodyweight",
+            "rest_seconds": 45,
+            "notes": "Core control"
+          },
+          {
+            "name": "Agility Ladder Drill",
+            "sets": 3,
+            "reps": "1 length",
+            "weight_kg": "bodyweight",
+            "rest_seconds": 60,
+            "notes": "Footwork + lateral quickness (centre drills)"
           }
         ]
       },
@@ -290,9 +306,9 @@
       },
       "nutrition": {
         "protein_g": 209,
-        "carbs_g": 340,
+        "carbs_g": 355,
         "fats_g": 95,
-        "notes": "Gym focus, can reduce carbs slightly"
+        "notes": "High carbs for explosive work"
       }
     },
     "Saturday": {
@@ -345,16 +361,83 @@
       "intensity": "Low-Moderate"
     }
   },
+  "daily_evening_routine": {
+    "duration_minutes": 15,
+    "timing": "Before bed (20-30 min before sleep)",
+    "focus": "Core stability + flexibility/elasticity",
+    "exercises": [
+      {
+        "name": "Plank Hold",
+        "duration_seconds": 45,
+        "notes": "Core foundation"
+      },
+      {
+        "name": "Side Plank (each side)",
+        "duration_seconds": 30,
+        "notes": "Lateral core stability"
+      },
+      {
+        "name": "Dead Bug",
+        "reps": 12,
+        "notes": "Core control + coordination"
+      },
+      {
+        "name": "Glute Bridges",
+        "reps": 15,
+        "notes": "Posterior chain activation"
+      },
+      {
+        "name": "Hip Flexor Stretch",
+        "duration_seconds": 30,
+        "notes": "Flexibility - hold each side"
+      },
+      {
+        "name": "Quad Stretch",
+        "duration_seconds": 30,
+        "notes": "Leg elasticity - each leg"
+      },
+      {
+        "name": "Hamstring Stretch (forward fold)",
+        "duration_seconds": 45,
+        "notes": "Posterior chain elasticity"
+      },
+      {
+        "name": "Thoracic Rotation (on foam roller or ground)",
+        "reps": 10,
+        "notes": "Mobility + flexibility"
+      },
+      {
+        "name": "Cat-Cow Stretch",
+        "reps": 12,
+        "notes": "Spinal mobility"
+      },
+      {
+        "name": "Child's Pose",
+        "duration_seconds": 60,
+        "notes": "Full body relaxation + breathing"
+      }
+    ],
+    "benefits": [
+      "Improves core stability for tackles & rucking",
+      "Enhances flexibility for injury prevention",
+      "Prepares nervous system for sleep",
+      "Maintains elasticity (rugby requires quick movements)",
+      "Accelerates recovery"
+    ]
+  },
   "weekly_summary": {
     "gym_days": 5,
     "cardio_sessions": 2,
+    "daily_routine_sessions": 7,
     "rest_days": 2,
-    "total_gym_hours": "~4.75 hours",
+    "total_gym_hours": "~4.5 hours",
     "total_cardio": "~45 minutes",
+    "total_daily_routine": "~1.75 hours (15 min × 7 days)",
     "calorie_deficit": "~500 cal/day",
     "expected_fat_loss": "~0.5kg/week",
-    "training_focus": "Strength + Fat Loss",
-    "split": "Push/Pull/Legs (5-day)"
+    "training_focus": "Strength + Explosive Power + Fat Loss (Rugby-Optimized)",
+    "split": "Push/Pull/Legs + Plyos/Core (5-day)",
+    "rugby_specific": "Plyometrics for power, daily core for tackles & rucking, agility work for centre positioning"
   },
   "notes": {
     "meal_timing": "Eat 30-60 min post-workout for gym days",
