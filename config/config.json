@@ -1,0 +1,21 @@
+{
+  "user": {
+    "name": "Your Name",
+    "age": null,
+    "height_cm": null,
+    "goal": "fitness_improvement"
+  },
+  "tracking": {
+    "enable_weight": true,
+    "enable_body_fat": true,
+    "enable_measurements": false
+  },
+  "data_format": {
+    "weight_unit": "kg",
+    "distance_unit": "km"
+  },
+  "analytics": {
+    "generate_monthly_reports": true,
+    "chart_colors": ["#FF6B6B", "#4ECDC4", "#45B7D1"]
+  }
+}
