@@ -58,17 +58,12 @@
         ]
       },
       "cardio_session": {
-        "enabled": true,
-        "type": "Zone 2",
-        "timing": "Morning (before gym or separate time)",
-        "duration_minutes": 30,
-        "modality": "Running or bike",
-        "protocol": "Easy pace, 60-70% max HR (can hold conversation easily)",
-        "notes": "Fat burning, low impact recovery"
+        "enabled": false,
+        "notes": "Morning free"
       },
       "nutrition": {
         "protein_g": 209,
-        "carbs_g": 370,
+        "carbs_g": 332,
         "fats_g": 95,
         "notes": "High carbs for gym volume + cardio"
       }
@@ -187,9 +182,18 @@
       },
       "nutrition": {
         "protein_g": 209,
-        "carbs_g": 395,
+        "carbs_g": 360,
         "fats_g": 95,
         "notes": "Highest carbs - most intense day"
+      },
+      "cardio_session": {
+        "enabled": true,
+        "type": "Zone 2",
+        "timing": "Evening (after gym)",
+        "duration_minutes": 30,
+        "modality": "Running or bike",
+        "protocol": "Easy pace, 60-70% max HR (can hold conversation easily)",
+        "notes": "Fat burning, active recovery"
       }
     },
     "Thursday": {
@@ -310,7 +314,7 @@
       },
       "cardio_session": {
         "enabled": false,
-        "notes": "No cardio on plyos day - focus on power and recovery"
+        "notes": "Evening free"
       },
       "nutrition": {
         "protein_g": 209,
@@ -360,7 +364,11 @@
   },
   "cardio_protocols": {
     "HIIT_4x4_norwegian": {
-      "days": ["Tuesday evening", "Friday evening (optional)", "Saturday morning (optional)"],
+      "days": [
+        "Tuesday evening",
+        "Friday evening (optional)",
+        "Saturday morning (optional)"
+      ],
       "duration_total": "20 minutes",
       "structure": "5min warmup + 4x(4min @ 90% max HR / 3min recovery @ 60%) + 2min cool down",
       "goal": "Fat loss + VO2 max + rugby conditioning",
@@ -368,7 +376,10 @@
       "notes": "Repeat 2-3 times per week depending on recovery"
     },
     "zone_2_steady": {
-      "days": ["Monday morning", "Thursday morning"],
+      "days": [
+        "Monday morning",
+        "Thursday morning"
+      ],
       "duration_total": "30 minutes",
       "structure": "Easy pace, can hold conversation, 60-70% max HR",
       "goal": "Fat burning, aerobic base, active recovery",
@@ -448,7 +459,7 @@
     "rest_days": 1,
     "total_gym_hours": "~4.5 hours",
     "total_cardio": "~70-90 minutes (separate from gym)",
-    "total_daily_routine": "~1.75 hours (15 min × 7 days)",
+    "total_daily_routine": "~1.75 hours (15 min \u00d7 7 days)",
     "weekly_schedule": {
       "Monday": "Push A (55min) + Morning Zone 2 (30min)",
       "Tuesday": "Pull A (55min) + Evening HIIT 4x4 (20min)",
