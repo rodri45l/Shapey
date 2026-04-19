@@ -99,7 +99,9 @@ def create_overview_table(routine):
     for day in days:
         session = routine['weekly_routine'][day]
         gym = '✓' if session['gym_session']['enabled'] else '—'
-        running = '✓' if session['running_session']['enabled'] else '—'
+        # Handle both cardio_session and running_session keys
+        cardio_session = session.get('cardio_session') or session.get('running_session')
+        cardio = '✓' if cardio_session and cardio_session.get('enabled') else '—'
         # Handle both old and new format
         protein = session.get('protein_intake_grams', session.get('nutrition', {}).get('protein_g', '—'))
 
@@ -107,7 +109,7 @@ def create_overview_table(routine):
             day,
             session['day_name'],
             gym,
-            running,
+            cardio,
             str(protein)
         ])
 
@@ -159,39 +161,39 @@ def create_day_page(day_name, session, routine_data, styles):
 
         content.append(Spacer(1, 0.2*inch))
 
-    # Running session
-    if session['running_session']['enabled']:
-        running = session['running_session']
-        content.append(Paragraph("🏃 Running Session", styles['section']))
+    # Cardio session (handles both cardio_session and running_session keys)
+    cardio_session = session.get('cardio_session') or session.get('running_session')
+    if cardio_session and cardio_session.get('enabled'):
+        content.append(Paragraph("🏃 Cardio Session", styles['section']))
         content.append(Paragraph(
-            f"Type: {running['type'].capitalize()} | Duration: {running['duration_minutes']} min",
+            f"Type: {cardio_session['type']} | Duration: {cardio_session['duration_minutes']} min",
             styles['normal']
         ))
 
-        # Display protocol if available
-        if running.get('protocol'):
+        # Display timing if available
+        if cardio_session.get('timing'):
             content.append(Paragraph(
-                f"Protocol: {running['protocol']}",
+                f"Timing: {cardio_session['timing']}",
                 styles['normal']
             ))
 
-        # Display old format if available
-        if running.get('distance_km') and running.get('pace_kmh'):
+        # Display protocol if available
+        if cardio_session.get('protocol'):
             content.append(Paragraph(
-                f"Distance: {running['distance_km']} km | Pace: {running['pace_kmh']} km/h",
+                f"Protocol: {cardio_session['protocol']}",
                 styles['normal']
             ))
 
         # Display modality if available
-        if running.get('modality'):
+        if cardio_session.get('modality'):
             content.append(Paragraph(
-                f"Modality: {running['modality']}",
+                f"Modality: {cardio_session['modality']}",
                 styles['normal']
             ))
 
-        if running.get('notes'):
+        if cardio_session.get('notes'):
             content.append(Paragraph(
-                f"Notes: {running['notes']}",
+                f"Notes: {cardio_session['notes']}",
                 styles['normal']
             ))
 
@@ -234,7 +236,20 @@ def create_macro_section(routine_data, styles):
         protein = nutrition.get('protein_g', 209)
         carbs = nutrition.get('carbs_g', 332)
         fats = nutrition.get('fats_g', 95)
-        day_type = 'Gym' if session['gym_session']['enabled'] else 'Cardio' if session['running_session']['enabled'] else 'Rest'
+
+        # Determine day type
+        has_gym = session['gym_session']['enabled']
+        cardio_session = session.get('cardio_session') or session.get('running_session')
+        has_cardio = cardio_session and cardio_session.get('enabled') if cardio_session else False
+
+        if has_gym and has_cardio:
+            day_type = 'Gym+Cardio'
+        elif has_gym:
+            day_type = 'Gym'
+        elif has_cardio:
+            day_type = 'Cardio'
+        else:
+            day_type = 'Rest'
 
         macro_data.append([
             day,

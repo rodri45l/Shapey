@@ -57,19 +57,25 @@
           }
         ]
       },
-      "running_session": {
-        "enabled": false
+      "cardio_session": {
+        "enabled": true,
+        "type": "Zone 2",
+        "timing": "Morning (before gym or separate time)",
+        "duration_minutes": 30,
+        "modality": "Running or bike",
+        "protocol": "Easy pace, 60-70% max HR (can hold conversation easily)",
+        "notes": "Fat burning, low impact recovery"
       },
       "nutrition": {
         "protein_g": 209,
         "carbs_g": 370,
         "fats_g": 95,
-        "notes": "High carbs for gym volume"
+        "notes": "High carbs for gym volume + cardio"
       }
     },
     "Tuesday": {
       "day_name": "Pull A (Back & Biceps)",
-      "day_type": "mixed",
+      "day_type": "strength",
       "gym_session": {
         "enabled": true,
         "duration_minutes": 55,
@@ -109,19 +115,20 @@
           }
         ]
       },
-      "running_session": {
+      "cardio_session": {
         "enabled": true,
-        "type": "HIIT",
+        "type": "HIIT (4x4 Norwegian)",
+        "timing": "Evening (4-6 hours after gym)",
         "duration_minutes": 20,
-        "modality": "Treadmill or outdoor",
-        "protocol": "5min warmup + 8x(1min hard / 1min easy) + 2min cool down",
-        "notes": "Evening session, 4-6 hours post-gym"
+        "modality": "Running or bike",
+        "protocol": "5min warmup + 4x(4min @ 90% HR / 3min recovery @ 60% HR) + 2min cool down",
+        "notes": "High intensity, fat loss + VO2 max"
       },
       "nutrition": {
         "protein_g": 209,
         "carbs_g": 365,
         "fats_g": 95,
-        "notes": "High carbs for gym + cardio"
+        "notes": "High carbs for gym + HIIT"
       }
     },
     "Wednesday": {
@@ -187,7 +194,7 @@
     },
     "Thursday": {
       "day_name": "Push B (Shoulders & Arms)",
-      "day_type": "mixed",
+      "day_type": "strength",
       "gym_session": {
         "enabled": true,
         "duration_minutes": 50,
@@ -227,20 +234,20 @@
           }
         ]
       },
-      "running_session": {
+      "cardio_session": {
         "enabled": true,
-        "type": "Steady State",
-        "duration_minutes": 25,
+        "type": "Zone 2",
+        "timing": "Morning (before breakfast/gym or separate time)",
+        "duration_minutes": 30,
         "modality": "Running or bike",
-        "protocol": "Easy pace, ~70% max HR (can hold conversation)",
-        "timing": "Morning, 2-3 hours before gym or evening 4+ hours post-gym",
-        "notes": "Fat burning zone, low impact on recovery"
+        "protocol": "Easy pace, 60-70% max HR (can hold conversation)",
+        "notes": "Fat burning, active recovery"
       },
       "nutrition": {
         "protein_g": 209,
         "carbs_g": 355,
         "fats_g": 95,
-        "notes": "Moderate carbs + cardio"
+        "notes": "High carbs for gym + cardio"
       }
     },
     "Friday": {
@@ -301,8 +308,9 @@
           }
         ]
       },
-      "running_session": {
-        "enabled": false
+      "cardio_session": {
+        "enabled": false,
+        "notes": "No cardio on plyos day - focus on power and recovery"
       },
       "nutrition": {
         "protein_g": 209,
@@ -312,24 +320,25 @@
       }
     },
     "Saturday": {
-      "day_name": "Active Recovery / Optional Conditioning",
-      "day_type": "recovery",
+      "day_name": "Optional HIIT (4x4 Norwegian)",
+      "day_type": "optional",
       "gym_session": {
         "enabled": false
       },
-      "running_session": {
+      "cardio_session": {
         "enabled": true,
-        "type": "Optional",
-        "duration_minutes": 30,
+        "type": "HIIT (4x4 Norwegian) - OPTIONAL",
+        "timing": "Morning (if feeling fresh and recovered)",
+        "duration_minutes": 20,
         "modality": "Running or bike",
-        "protocol": "Very easy, low intensity - only if feeling good",
-        "notes": "Only do if recovered well. Can skip if sore/tired"
+        "protocol": "5min warmup + 4x(4min @ 90% HR / 3min recovery @ 60% HR) + 2min cool down",
+        "notes": "Only do if well recovered. Can skip if tired or sore. Completes 3x HIIT per week if done."
       },
       "nutrition": {
         "protein_g": 180,
-        "carbs_g": 250,
+        "carbs_g": 290,
         "fats_g": 85,
-        "notes": "Lower calories on rest day"
+        "notes": "Lower calories, unless doing HIIT (then add carbs)"
       }
     },
     "Sunday": {
@@ -349,16 +358,22 @@
       }
     }
   },
-  "running_protocols": {
-    "HIIT_cardio": {
-      "Tuesday": "5min warmup + 8x(1min @90%HR / 1min easy) + 2min cool down = 20-25 min total",
-      "goal": "Fat loss + cardiovascular fitness",
-      "intensity": "High"
+  "cardio_protocols": {
+    "HIIT_4x4_norwegian": {
+      "days": ["Tuesday evening", "Friday evening (optional)", "Saturday morning (optional)"],
+      "duration_total": "20 minutes",
+      "structure": "5min warmup + 4x(4min @ 90% max HR / 3min recovery @ 60%) + 2min cool down",
+      "goal": "Fat loss + VO2 max + rugby conditioning",
+      "intensity": "High",
+      "notes": "Repeat 2-3 times per week depending on recovery"
     },
-    "steady_state": {
-      "Thursday": "Easy pace, can hold conversation, ~65-70% max HR = 25-30 min total",
-      "goal": "Fat burning, recovery active",
-      "intensity": "Low-Moderate"
+    "zone_2_steady": {
+      "days": ["Monday morning", "Thursday morning"],
+      "duration_total": "30 minutes",
+      "structure": "Easy pace, can hold conversation, 60-70% max HR",
+      "goal": "Fat burning, aerobic base, active recovery",
+      "intensity": "Low-Moderate",
+      "notes": "Always 2x per week - foundational for fat loss"
     }
   },
   "daily_evening_routine": {
@@ -427,17 +442,27 @@
   },
   "weekly_summary": {
     "gym_days": 5,
-    "cardio_sessions": 2,
+    "cardio_minimum": "4 sessions (2x Zone 2 + 2x HIIT)",
+    "cardio_maximum": "5 sessions (2x Zone 2 + 3x HIIT if Saturday done)",
     "daily_routine_sessions": 7,
-    "rest_days": 2,
+    "rest_days": 1,
     "total_gym_hours": "~4.5 hours",
-    "total_cardio": "~45 minutes",
+    "total_cardio": "~70-90 minutes (separate from gym)",
     "total_daily_routine": "~1.75 hours (15 min × 7 days)",
+    "weekly_schedule": {
+      "Monday": "Push A (55min) + Morning Zone 2 (30min)",
+      "Tuesday": "Pull A (55min) + Evening HIIT 4x4 (20min)",
+      "Wednesday": "Legs (60min) only",
+      "Thursday": "Push B (50min) + Morning Zone 2 (30min)",
+      "Friday": "Plyos + Core (50min) only",
+      "Saturday": "Optional HIIT 4x4 (20min) morning",
+      "Sunday": "Complete rest"
+    },
     "calorie_deficit": "~500 cal/day",
     "expected_fat_loss": "~0.5kg/week",
     "training_focus": "Strength + Explosive Power + Fat Loss (Rugby-Optimized)",
-    "split": "Push/Pull/Legs + Plyos/Core (5-day)",
-    "rugby_specific": "Plyometrics for power, daily core for tackles & rucking, agility work for centre positioning"
+    "cardio_format": "Separated from gym - morning or evening sessions",
+    "rugby_specific": "Plyometrics for power, 4x4 Norwegian HIIT for VO2/conditioning, daily core for tackles & rucking, Zone 2 for aerobic base"
   },
   "notes": {
     "meal_timing": "Eat 30-60 min post-workout for gym days",
