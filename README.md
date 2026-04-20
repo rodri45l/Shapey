@@ -12,17 +12,20 @@ Fixed constraints:
 - Mon–Fri midday slots: gym (locked)
 - Friday evening: busy most weeks
 
+Current-phase modalities: **gym, plyos, Z2 running, VO2 running**. Sprints/RSA
+and contact prep are deferred to a later block.
+
 Weekly layout (see `data/routine.json` for full detail):
 
 | Day | Morning | Midday | Evening |
 |-----|---------|--------|---------|
-| Mon | Z2 45min | Push A | — |
-| Tue | Z2 30min | Pull A | — |
+| Mon | Z2 run 45min | Push A | — |
+| Tue | Z2 run 30min | Pull A | — |
 | Wed | — | Legs | — (recover) |
-| Thu | — | Push B | RSA sprints 35min |
+| Thu | — | Push B | — |
 | Fri | — | Plyos + Core | busy |
-| Sat | VO2 4x4 25min | — | — |
-| Sun | optional easy walk | — | — |
+| Sat | VO2 4x4 run 25min | — | — |
+| Sun | — | — | — (full rest) |
 
 ## Features
 
