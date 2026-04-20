@@ -19,10 +19,10 @@ Weekly layout (see `data/routine.json` for full detail):
 
 | Day | Morning | Midday | Evening |
 |-----|---------|--------|---------|
-| Mon | Z2 run 45min | Push A | — |
-| Tue | Z2 run 30min | Pull A | — |
+| Mon | — (unavailable) | Push A | — |
+| Tue | VO2 4x4 run 25min | Pull A | — |
 | Wed | — | Legs | — (recover) |
-| Thu | — | Push B | — |
+| Thu | — | Push B | Z2 run 40min |
 | Fri | — | Plyos + Core | busy |
 | Sat | VO2 4x4 run 25min | — | — |
 | Sun | — | — | — (full rest) |

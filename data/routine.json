@@ -63,19 +63,14 @@
         ]
       },
       "cardio_session": {
-        "enabled": true,
-        "type": "Zone 2 Running",
-        "timing": "Morning (well before midday gym)",
-        "duration_minutes": 45,
-        "modality": "Easy run",
-        "protocol": "Nose-breathing pace, 60-70% max HR, conversational",
-        "notes": "Upper-body gym later - legs unaffected. Long Z2 for aerobic base + fat burn"
+        "enabled": false,
+        "notes": "Monday morning not available - Push A midday only"
       },
       "nutrition": {
         "protein_g": 209,
-        "carbs_g": 332,
+        "carbs_g": 315,
         "fats_g": 95,
-        "notes": "High carbs for gym volume + cardio"
+        "notes": "Moderate carbs - gym only, no morning cardio"
       }
     },
     "Tuesday": {
@@ -122,12 +117,12 @@
       },
       "cardio_session": {
         "enabled": true,
-        "type": "Zone 2 Running",
-        "timing": "Morning (before midday gym)",
-        "duration_minutes": 30,
-        "modality": "Easy run",
-        "protocol": "Easy pace, 60-70% max HR, conversational",
-        "notes": "Second Z2 of week. Upper-body (Pull) at midday - no leg interference"
+        "type": "VO2 Running Intervals (4x4 Norwegian) #1",
+        "timing": "Morning (4+ hours before midday gym)",
+        "duration_minutes": 25,
+        "modality": "Running",
+        "protocol": "5min warmup + 4x(4min @ 90-95% max HR / 3min recovery jog @ 60% HR) + 3min cool down",
+        "notes": "First VO2 of the week. Pull A at midday - upper-body only, legs will be fatigued but OK for pulling"
       },
       "nutrition": {
         "protein_g": 209,
@@ -244,14 +239,19 @@
         ]
       },
       "cardio_session": {
-        "enabled": false,
-        "notes": "No cardio this phase - sprints reintroduced in later block"
+        "enabled": true,
+        "type": "Zone 2 Running",
+        "timing": "Evening (4+ hours after midday gym)",
+        "duration_minutes": 40,
+        "modality": "Easy run",
+        "protocol": "Nose-breathing pace, 60-70% max HR, conversational",
+        "notes": "Only Z2 of the week - aerobic base between the two VO2 sessions. Push B at midday (upper-body) - legs fine for evening run"
       },
       "nutrition": {
         "protein_g": 209,
         "carbs_g": 340,
         "fats_g": 95,
-        "notes": "Moderate carbs - upper-body gym only"
+        "notes": "Moderate-high carbs - upper gym + evening Z2"
       }
     },
     "Friday": {
@@ -331,12 +331,12 @@
       },
       "cardio_session": {
         "enabled": true,
-        "type": "VO2 Running Intervals (4x4 Norwegian)",
+        "type": "VO2 Running Intervals (4x4 Norwegian) #2",
         "timing": "Morning",
         "duration_minutes": 25,
         "modality": "Running",
-        "protocol": "5min warmup + 4x(4min @ 90-95% max HR / 3min active recovery jog @ 60% HR) + 3min cool down",
-        "notes": "Primary VO2 session of the week. Fresh after Fri-evening-off"
+        "protocol": "5min warmup + 4x(4min @ 90-95% max HR / 3min recovery jog @ 60% HR) + 3min cool down",
+        "notes": "Second VO2 of the week (~4 days after Tue). Fresh after Fri-evening-off"
       },
       "nutrition": {
         "protein_g": 200,
@@ -366,26 +366,30 @@
   "cardio_protocols": {
     "VO2_4x4_norwegian_running": {
       "days": [
+        "Tuesday morning",
         "Saturday morning"
       ],
-      "duration_total": "25 minutes",
+      "duration_total": "25 minutes per session (50 min/week)",
       "structure": "5min warmup + 4x(4min @ 90-95% max HR / 3min recovery jog @ 60%) + 3min cool down",
       "goal": "VO2 max + rugby conditioning",
       "intensity": "High",
       "modality": "Running",
-      "notes": "Once per week. Scheduled Saturday so legs are fresh after Fri-evening-off"
+      "sessions_per_week": 2,
+      "spacing": "~4 days between sessions (Tue \u2192 Sat)",
+      "notes": "Both scheduled on upper-body gym days (Pull Tue, no gym Sat) so legs aren't double-taxed. If fatigue accumulates, drop one back to Z2 temporarily"
     },
     "zone_2_running": {
       "days": [
-        "Monday morning (45min)",
-        "Tuesday morning (30min)"
+        "Thursday evening (40min)"
       ],
-      "duration_total": "75 minutes/week",
+      "duration_total": "40 minutes/week",
       "structure": "Easy pace, conversational, 60-70% max HR",
       "goal": "Aerobic base, fat oxidation",
       "intensity": "Low-Moderate",
       "modality": "Running",
-      "notes": "2x per week on upper-body gym days so legs are unaffected"
+      "sessions_per_week": 1,
+      "timing_rule": "Evening, 4+ hours after midday gym",
+      "notes": "Sits between the two VO2 sessions. Push B midday (upper) leaves legs fine for evening Z2"
     }
   },
   "future_phase_additions": {
@@ -473,21 +477,22 @@
     "modalities_this_phase": ["Gym", "Plyometrics", "Z2 running", "VO2 running"],
     "gym_days": 5,
     "gym_timing": "Mon-Fri midday (existing commitment)",
-    "cardio_sessions": "3 scheduled (2x Z2 running + 1x VO2 running)",
+    "cardio_sessions": "3 scheduled (2x VO2 running + 1x Z2 running)",
     "daily_routine_sessions": 7,
     "rest_days": 2,
     "busy_slots": [
       "Mon-Fri midday (gym - locked)",
+      "Monday morning (not available)",
       "Friday evening (most weeks)"
     ],
     "total_gym_hours": "~4.5 hours",
-    "total_cardio": "~100 minutes (45 + 30 + 25)",
+    "total_cardio": "~90 minutes (25 + 40 + 25)",
     "total_daily_routine": "~1.75 hours (15 min \u00d7 7 days)",
     "weekly_schedule": {
-      "Monday": "Morning Z2 run 45min + Push A midday 55min",
-      "Tuesday": "Morning Z2 run 30min + Pull A midday 55min",
+      "Monday": "Push A midday 55min only (morning not available)",
+      "Tuesday": "Morning VO2 4x4 run 25min + Pull A midday 55min",
       "Wednesday": "Legs midday 60min only (no cardio - recover)",
-      "Thursday": "Push B midday 50min only",
+      "Thursday": "Push B midday 50min + Evening Z2 run 40min",
       "Friday": "Plyos + Core midday 50min (evening busy)",
       "Saturday": "Morning VO2 4x4 run 25min",
       "Sunday": "Complete rest"
@@ -495,7 +500,7 @@
     "calorie_deficit": "~500-600 cal/day (priority: drop 30% \u2192 ~20% BF)",
     "expected_fat_loss": "~0.5-0.7kg/week",
     "training_focus": "Body recomposition > Strength > Running base",
-    "cardio_format": "All running - separated from midday gym (morning only)",
+    "cardio_format": "All running - separated from midday gym (morning or evening)",
     "priority_note": "At 30% BF, fat loss is the single biggest performance lever. Nutrition (protein + deficit) > conditioning volume. Re-test body comp every 2 weeks and adjust carbs down 30g if stalled. Sprints/RSA added in later phase - see future_phase_additions"
   },
   "notes": {
