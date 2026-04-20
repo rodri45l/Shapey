@@ -10,22 +10,25 @@ Priority order: **body recomp → strength retention → rugby-specific conditio
 Fixed constraints:
 
 - Mon–Fri midday slots: gym (locked)
+- Mon–Fri mornings: off (not available)
 - Friday evening: busy most weeks
+
+Non-negotiable cardio volume: 2× VO2 4x4 (38min each) + 2× Z2 runs.
 
 Current-phase modalities: **gym, plyos, Z2 running, VO2 running**. Sprints/RSA
 and contact prep are deferred to a later block.
 
 Weekly layout (see `data/routine.json` for full detail):
 
-| Day | Morning | Midday | Evening |
-|-----|---------|--------|---------|
-| Mon | — (unavailable) | Push A | Z2 run 30min (shakeout) |
-| Tue | VO2 4x4 run 25min | Pull A | — |
-| Wed | — | Legs | — (recover) |
-| Thu | — | Push B | Z2 run 40min |
-| Fri | — | Plyos + Core | busy |
-| Sat | VO2 4x4 run 25min | — | — |
-| Sun | — | — | — (full rest) |
+| Day | Midday | Evening |
+|-----|--------|---------|
+| Mon | Push A | Z2 run 40min |
+| Tue | Pull A | VO2 4x4 run 38min |
+| Wed | Legs | — (recover) |
+| Thu | Push B | Z2 run 40min |
+| Fri | Plyos + Core | busy |
+| Sat | — | VO2 4x4 run 38min (flexible) |
+| Sun | — | full rest |
 
 ## Features
 
