@@ -1,11 +1,16 @@
 {
   "user_stats": {
     "current_weight_kg": 95.0,
-    "body_fat_percent": 22.0,
+    "height_cm": 177,
+    "body_fat_percent": 30.0,
     "resting_heart_rate": 65,
     "hrv": 42,
     "last_sleep_hours": 7.5,
-    "last_updated": "2026-04-19"
+    "last_updated": "2026-04-20",
+    "sport": "Rugby Union",
+    "position": "Inside Centre (#12)",
+    "status": "Ex-player returning to the game",
+    "primary_goal": "Body recomposition (target ~18-20% BF / 85-88kg) before contact return"
   },
   "macro_targets": {
     "protein_g": 209,
@@ -58,8 +63,13 @@
         ]
       },
       "cardio_session": {
-        "enabled": false,
-        "notes": "Morning free"
+        "enabled": true,
+        "type": "Zone 2 (Aerobic Base)",
+        "timing": "Morning (well before midday gym)",
+        "duration_minutes": 45,
+        "modality": "Bike or easy run",
+        "protocol": "Nose-breathing pace, 60-70% max HR, conversational",
+        "notes": "Upper-body gym later - legs unaffected. Long Z2 for aerobic base + fat burn"
       },
       "nutrition": {
         "protein_g": 209,
@@ -112,18 +122,18 @@
       },
       "cardio_session": {
         "enabled": true,
-        "type": "HIIT (4x4 Norwegian)",
-        "timing": "Evening (4-6 hours after gym)",
-        "duration_minutes": 20,
-        "modality": "Running or bike",
-        "protocol": "5min warmup + 4x(4min @ 90% HR / 3min recovery @ 60% HR) + 2min cool down",
-        "notes": "High intensity, fat loss + VO2 max"
+        "type": "Zone 2 (Aerobic Base #2)",
+        "timing": "Morning (before midday gym)",
+        "duration_minutes": 30,
+        "modality": "Bike or easy run",
+        "protocol": "Easy pace, 60-70% max HR, conversational",
+        "notes": "Second Z2 of week. Upper-body (Pull) at midday - no leg interference"
       },
       "nutrition": {
         "protein_g": 209,
-        "carbs_g": 365,
+        "carbs_g": 340,
         "fats_g": 95,
-        "notes": "High carbs for gym + HIIT"
+        "notes": "Steady carbs - Z2 morning + upper-body midday"
       }
     },
     "Wednesday": {
@@ -187,13 +197,8 @@
         "notes": "Highest carbs - most intense day"
       },
       "cardio_session": {
-        "enabled": true,
-        "type": "Zone 2",
-        "timing": "Evening (after gym)",
-        "duration_minutes": 30,
-        "modality": "Running or bike",
-        "protocol": "Easy pace, 60-70% max HR (can hold conversation easily)",
-        "notes": "Fat burning, active recovery"
+        "enabled": false,
+        "notes": "Legs wrecked from heavy squats/RDLs - mobility/foam-roll only. Save CNS for Thursday RSA"
       }
     },
     "Thursday": {
@@ -240,18 +245,18 @@
       },
       "cardio_session": {
         "enabled": true,
-        "type": "Zone 2",
-        "timing": "Morning (before breakfast/gym or separate time)",
-        "duration_minutes": 30,
-        "modality": "Running or bike",
-        "protocol": "Easy pace, 60-70% max HR (can hold conversation)",
-        "notes": "Fat burning, active recovery"
+        "type": "RSA (Repeat Sprint Ability) - Rugby-Specific",
+        "timing": "Evening (4+ hours after midday gym)",
+        "duration_minutes": 35,
+        "modality": "Sprints on grass or track",
+        "protocol": "Full dynamic warm-up (10min) + 10x40m sprints @ near-max, 25s rest between reps, 2 sets with 4min between sets + cool down",
+        "notes": "Most rugby-specific session of the week. Mimics #12 repeat efforts. Requires full warm-up - injury risk at 30% BF/detrained. Progress: week 1-2 do 1 set of 8, week 3-4 do 2 sets of 8, week 5+ full protocol"
       },
       "nutrition": {
         "protein_g": 209,
-        "carbs_g": 355,
+        "carbs_g": 365,
         "fats_g": 95,
-        "notes": "High carbs for gym + cardio"
+        "notes": "High carbs - hardest CNS day (upper gym + evening sprints)"
       }
     },
     "Friday": {
@@ -314,77 +319,106 @@
       },
       "cardio_session": {
         "enabled": false,
-        "notes": "Evening free"
+        "notes": "Friday evening typically busy - no cardio scheduled"
       },
       "nutrition": {
         "protein_g": 209,
-        "carbs_g": 355,
+        "carbs_g": 340,
         "fats_g": 95,
-        "notes": "High carbs for explosive work"
+        "notes": "Moderate carbs - plyos only, no evening session"
       }
     },
     "Saturday": {
-      "day_name": "Optional HIIT (4x4 Norwegian)",
-      "day_type": "optional",
+      "day_name": "VO2 Max Intervals (4x4 Norwegian)",
+      "day_type": "conditioning",
       "gym_session": {
         "enabled": false
       },
       "cardio_session": {
         "enabled": true,
-        "type": "HIIT (4x4 Norwegian) - OPTIONAL",
-        "timing": "Morning (if feeling fresh and recovered)",
-        "duration_minutes": 20,
-        "modality": "Running or bike",
-        "protocol": "5min warmup + 4x(4min @ 90% HR / 3min recovery @ 60% HR) + 2min cool down",
-        "notes": "Only do if well recovered. Can skip if tired or sore. Completes 3x HIIT per week if done."
+        "type": "VO2 Intervals (4x4 Norwegian)",
+        "timing": "Morning",
+        "duration_minutes": 25,
+        "modality": "Running (preferred) or bike",
+        "protocol": "5min warmup + 4x(4min @ 90-95% max HR / 3min active recovery @ 60% HR) + 3min cool down",
+        "notes": "Primary VO2 session of the week. Fresh after Fri-evening-off. If legs still sore, use bike instead of run"
       },
       "nutrition": {
-        "protein_g": 180,
-        "carbs_g": 290,
-        "fats_g": 85,
-        "notes": "Lower calories, unless doing HIIT (then add carbs)"
+        "protein_g": 200,
+        "carbs_g": 310,
+        "fats_g": 90,
+        "notes": "Moderate carbs - fuel VO2 session, slight deficit otherwise"
       }
     },
     "Sunday": {
-      "day_name": "Complete Rest",
-      "day_type": "rest",
+      "day_name": "Active Recovery",
+      "day_type": "recovery",
       "gym_session": {
         "enabled": false
       },
-      "running_session": {
-        "enabled": false
+      "cardio_session": {
+        "enabled": true,
+        "type": "Optional easy walk / mobility",
+        "timing": "Any time",
+        "duration_minutes": 45,
+        "modality": "Walk outdoors or light mobility flow",
+        "protocol": "Very easy pace, <60% max HR. Skip entirely if wrecked",
+        "notes": "Parasympathetic recovery. Do not turn into another Z2 session"
       },
       "nutrition": {
         "protein_g": 180,
-        "carbs_g": 250,
+        "carbs_g": 230,
         "fats_g": 85,
-        "notes": "Lower calories, focus on recovery & sleep"
+        "notes": "Lowest-carb day - full rest, widen deficit for fat-loss"
       }
     }
   },
   "cardio_protocols": {
-    "HIIT_4x4_norwegian": {
+    "VO2_4x4_norwegian": {
       "days": [
-        "Tuesday evening",
-        "Friday evening (optional)",
-        "Saturday morning (optional)"
+        "Saturday morning"
       ],
-      "duration_total": "20 minutes",
-      "structure": "5min warmup + 4x(4min @ 90% max HR / 3min recovery @ 60%) + 2min cool down",
-      "goal": "Fat loss + VO2 max + rugby conditioning",
+      "duration_total": "25 minutes",
+      "structure": "5min warmup + 4x(4min @ 90-95% max HR / 3min recovery @ 60%) + 3min cool down",
+      "goal": "VO2 max + rugby conditioning",
       "intensity": "High",
-      "notes": "Repeat 2-3 times per week depending on recovery"
+      "notes": "Once per week. Scheduled Saturday so legs are fresh after Fri-evening-off"
     },
     "zone_2_steady": {
       "days": [
-        "Monday morning",
-        "Thursday morning"
+        "Monday morning (45min)",
+        "Tuesday morning (30min)"
       ],
-      "duration_total": "30 minutes",
-      "structure": "Easy pace, can hold conversation, 60-70% max HR",
-      "goal": "Fat burning, aerobic base, active recovery",
+      "duration_total": "75 minutes/week",
+      "structure": "Easy pace, conversational, 60-70% max HR",
+      "goal": "Aerobic base, fat oxidation, active recovery",
       "intensity": "Low-Moderate",
-      "notes": "Always 2x per week - foundational for fat loss"
+      "notes": "2x per week on upper-body gym days so legs are unaffected"
+    },
+    "rsa_sprints": {
+      "days": [
+        "Thursday evening"
+      ],
+      "duration_total": "35 minutes",
+      "structure": "10min dynamic warm-up + 2 sets of 10x40m sprints (25s rest between reps, 4min between sets) + cool down",
+      "goal": "Repeat Sprint Ability - rugby-specific #12 conditioning",
+      "intensity": "Maximal",
+      "progression": {
+        "week_1_2": "1 set of 8x40m",
+        "week_3_4": "2 sets of 8x40m",
+        "week_5_plus": "Full protocol (2x10x40m)"
+      },
+      "notes": "Most injury-prone session - full warm-up mandatory. Skip if any hamstring/calf tightness"
+    },
+    "active_recovery_walk": {
+      "days": [
+        "Sunday (optional)"
+      ],
+      "duration_total": "45 minutes",
+      "structure": "Easy walk, <60% max HR",
+      "goal": "Parasympathetic recovery, circulation",
+      "intensity": "Very low",
+      "notes": "Skip if fatigued - full rest is also valid"
     }
   },
   "daily_evening_routine": {
@@ -453,27 +487,32 @@
   },
   "weekly_summary": {
     "gym_days": 5,
-    "cardio_minimum": "4 sessions (2x Zone 2 + 2x HIIT)",
-    "cardio_maximum": "5 sessions (2x Zone 2 + 3x HIIT if Saturday done)",
+    "gym_timing": "Mon-Fri midday (existing commitment)",
+    "cardio_sessions": "4 scheduled (2x Z2 + 1x RSA + 1x VO2) + optional Sun walk",
     "daily_routine_sessions": 7,
     "rest_days": 1,
+    "busy_slots": [
+      "Mon-Fri midday (gym - locked)",
+      "Friday evening (most weeks)"
+    ],
     "total_gym_hours": "~4.5 hours",
-    "total_cardio": "~70-90 minutes (separate from gym)",
+    "total_cardio": "~160 minutes (45+30+35+25 + optional walk)",
     "total_daily_routine": "~1.75 hours (15 min \u00d7 7 days)",
     "weekly_schedule": {
-      "Monday": "Push A (55min) + Morning Zone 2 (30min)",
-      "Tuesday": "Pull A (55min) + Evening HIIT 4x4 (20min)",
-      "Wednesday": "Legs (60min) only",
-      "Thursday": "Push B (50min) + Morning Zone 2 (30min)",
-      "Friday": "Plyos + Core (50min) only",
-      "Saturday": "Optional HIIT 4x4 (20min) morning",
-      "Sunday": "Complete rest"
+      "Monday": "Morning Z2 45min + Push A midday 55min",
+      "Tuesday": "Morning Z2 30min + Pull A midday 55min",
+      "Wednesday": "Legs midday 60min only (no cardio - recover)",
+      "Thursday": "Push B midday 50min + Evening RSA sprints 35min",
+      "Friday": "Plyos + Core midday 50min (evening busy)",
+      "Saturday": "Morning VO2 4x4 25min",
+      "Sunday": "Optional easy walk / full rest"
     },
-    "calorie_deficit": "~500 cal/day",
-    "expected_fat_loss": "~0.5kg/week",
-    "training_focus": "Strength + Explosive Power + Fat Loss (Rugby-Optimized)",
-    "cardio_format": "Separated from gym - morning or evening sessions",
-    "rugby_specific": "Plyometrics for power, 4x4 Norwegian HIIT for VO2/conditioning, daily core for tackles & rucking, Zone 2 for aerobic base"
+    "calorie_deficit": "~500-600 cal/day (priority: drop 30% \u2192 ~20% BF)",
+    "expected_fat_loss": "~0.5-0.7kg/week",
+    "training_focus": "Body recomposition > Strength > Rugby-specific conditioning",
+    "cardio_format": "All cardio separated from midday gym (morning or evening)",
+    "rugby_specific": "RSA sprints Thu (#12 repeat-effort), plyos Fri, VO2 Sat, Z2 base Mon/Tue, daily core for tackles/rucking",
+    "priority_note": "At 30% BF, fat loss is the single biggest performance lever. Nutrition (protein + deficit) > conditioning volume. Re-test body comp every 2 weeks and adjust carbs down 30g if stalled"
   },
   "notes": {
     "meal_timing": "Eat 30-60 min post-workout for gym days",
@@ -481,6 +520,9 @@
     "hydration": "Minimum 4L water per day",
     "progression": "Increase weights when hitting top of rep range for 2 consecutive weeks",
     "deload": "Every 4 weeks, reduce weights by 40% and do 3x5-8 reps",
-    "nutrition_adjustment": "If not losing weight after 2 weeks, reduce carbs by 30g"
+    "nutrition_adjustment": "If not losing weight after 2 weeks, reduce carbs by 30g",
+    "body_comp_priority": "Primary lever at 30% BF. Target ~18-20% BF (~85-88kg) before contact return",
+    "contact_prep": "Before returning to contact: neck isometrics 2x/week, ankle/hip mobility daily, build 6-8 weeks of RSA + plyo base",
+    "load_management": "5x gym + 4 cardio is a big stimulus. If wrecked after 2-3 weeks, drop Fri gym to mobility/core only"
   }
 }

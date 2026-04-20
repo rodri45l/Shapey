@@ -2,6 +2,28 @@
 
 A personal gym routine tracker to monitor your progress, track your current weight, and analyze your fitness data over time.
 
+## Current Training Block
+
+Rugby return-to-play (Inside Centre / #12). Starting point: 177cm, 95kg, ~30% BF.
+Priority order: **body recomp → strength retention → rugby-specific conditioning**.
+
+Fixed constraints:
+
+- Mon–Fri midday slots: gym (locked)
+- Friday evening: busy most weeks
+
+Weekly layout (see `data/routine.json` for full detail):
+
+| Day | Morning | Midday | Evening |
+|-----|---------|--------|---------|
+| Mon | Z2 45min | Push A | — |
+| Tue | Z2 30min | Pull A | — |
+| Wed | — | Legs | — (recover) |
+| Thu | — | Push B | RSA sprints 35min |
+| Fri | — | Plyos + Core | busy |
+| Sat | VO2 4x4 25min | — | — |
+| Sun | optional easy walk | — | — |
+
 ## Features
 
 - Track daily workouts and exercises
