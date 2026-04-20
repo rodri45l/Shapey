@@ -63,14 +63,19 @@
         ]
       },
       "cardio_session": {
-        "enabled": false,
-        "notes": "Monday morning not available - Push A midday only"
+        "enabled": true,
+        "type": "Zone 2 Running (shakeout)",
+        "timing": "Evening (4+ hours after midday gym)",
+        "duration_minutes": 30,
+        "modality": "Easy run",
+        "protocol": "Truly easy pace, nose-breathing, 60-65% max HR. Should feel restorative, not tiring",
+        "notes": "Morning unavailable so Z2 sits in evening. Kept short (30min) because Tue morning is VO2 - this works as a pre-VO2 shakeout rather than a hard session"
       },
       "nutrition": {
         "protein_g": 209,
-        "carbs_g": 315,
+        "carbs_g": 335,
         "fats_g": 95,
-        "notes": "Moderate carbs - gym only, no morning cardio"
+        "notes": "Moderate-high carbs - gym + evening Z2"
       }
     },
     "Tuesday": {
@@ -380,16 +385,17 @@
     },
     "zone_2_running": {
       "days": [
+        "Monday evening (30min - shakeout)",
         "Thursday evening (40min)"
       ],
-      "duration_total": "40 minutes/week",
+      "duration_total": "70 minutes/week",
       "structure": "Easy pace, conversational, 60-70% max HR",
       "goal": "Aerobic base, fat oxidation",
       "intensity": "Low-Moderate",
       "modality": "Running",
-      "sessions_per_week": 1,
+      "sessions_per_week": 2,
       "timing_rule": "Evening, 4+ hours after midday gym",
-      "notes": "Sits between the two VO2 sessions. Push B midday (upper) leaves legs fine for evening Z2"
+      "notes": "Both sit after upper-body gym days so legs are fresh. Monday is deliberately shorter/easier because Tuesday morning VO2 follows ~12h later - treat Mon eve as shakeout pace"
     }
   },
   "future_phase_additions": {
@@ -477,19 +483,19 @@
     "modalities_this_phase": ["Gym", "Plyometrics", "Z2 running", "VO2 running"],
     "gym_days": 5,
     "gym_timing": "Mon-Fri midday (existing commitment)",
-    "cardio_sessions": "3 scheduled (2x VO2 running + 1x Z2 running)",
+    "cardio_sessions": "4 scheduled (2x VO2 running + 2x Z2 running)",
     "daily_routine_sessions": 7,
-    "rest_days": 2,
+    "rest_days": 1,
     "busy_slots": [
       "Mon-Fri midday (gym - locked)",
       "Monday morning (not available)",
       "Friday evening (most weeks)"
     ],
     "total_gym_hours": "~4.5 hours",
-    "total_cardio": "~90 minutes (25 + 40 + 25)",
+    "total_cardio": "~120 minutes (30 + 25 + 40 + 25)",
     "total_daily_routine": "~1.75 hours (15 min \u00d7 7 days)",
     "weekly_schedule": {
-      "Monday": "Push A midday 55min only (morning not available)",
+      "Monday": "Push A midday 55min + Evening Z2 run 30min (shakeout)",
       "Tuesday": "Morning VO2 4x4 run 25min + Pull A midday 55min",
       "Wednesday": "Legs midday 60min only (no cardio - recover)",
       "Thursday": "Push B midday 50min + Evening Z2 run 40min",

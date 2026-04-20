@@ -19,7 +19,7 @@ Weekly layout (see `data/routine.json` for full detail):
 
 | Day | Morning | Midday | Evening |
 |-----|---------|--------|---------|
-| Mon | — (unavailable) | Push A | — |
+| Mon | — (unavailable) | Push A | Z2 run 30min (shakeout) |
 | Tue | VO2 4x4 run 25min | Pull A | — |
 | Wed | — | Legs | — (recover) |
 | Thu | — | Push B | Z2 run 40min |
